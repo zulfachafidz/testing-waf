@@ -1,11 +1,31 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOPSUSC2 MARKET PLANS</title>
     <link rel="stylesheet" href="https://cdn.shopify.com/s/files/1/0533/2089/files/roboto.css?9715355625480695887">
     <link rel="stylesheet" href="https://cdn.shopify.com/s/files/1/0533/2089/files/animate.min.css?12530750748070383947">
+    <script>
+        // Fungsi untuk membaca cookie
+        function getCookie(name) {
+            let cookieArr = document.cookie.split(";");
+            for (let i = 0; i < cookieArr.length; i++) {
+                let cookiePair = cookieArr[i].split("=");
+                if (name === cookiePair[0].trim()) {
+                    return cookiePair[1];
+                }
+            }
+            return null;
+        }
+
+        // Cek apakah ensure telah selesai (cookie `ensureCompleted`)
+        if (!getCookie('SuccessEnsure')) {
+            window.location.href = 'https://lopsusc2.my.id/';
+        }
+    </script>
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -110,13 +130,5 @@
     <div class="footer">
         <p>&copy; 2024 LOPSUSC2. All rights reserved.</p>
     </div>
-
-    <script>
-        // Cek apakah pengguna sudah mengunjungi halaman ensure.html selama sesi ini
-        if (!sessionStorage.getItem('hasVisitedEnsure')) {
-            // Jika belum, arahkan pengguna ke ensure.html untuk preload
-            window.location.href = 'http://localhost:3000/'; 
-        }
-    </script>
 </body>
 </html>
